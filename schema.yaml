@@ -1,10 +1,85 @@
 openapi: 3.0.3
 info:
-  title: OpenAPI schema for template walrus-template-template
+  title: OpenAPI schema for template .
 components:
   schemas:
     variables:
       type: object
+      properties:
+        image_name:
+          title: Image Name
+          type: string
+          description: Name for the log server image
+          default: zabbix-by-terraform
+          x-walrus-ui:
+            group: Basic
+            order: 2
+        image_url:
+          title: Image Url
+          type: string
+          description: URL to download the image from
+          default: http://minio.zstack.io:9001/packer/zabbix-by-packer-image-compressed.qcow2
+          x-walrus-ui:
+            group: Basic
+            order: 3
+        backup_storage_name:
+          title: Backup Storage Name
+          type: string
+          description: Name of the backup storage to use
+          default: bs
+          x-walrus-ui:
+            group: Basic
+            order: 4
+        instance_name:
+          title: Instance Name
+          type: string
+          description: Name for the zabbix server instance
+          default: zabbix
+          x-walrus-ui:
+            group: Basic
+            order: 5
+        l3_network_name:
+          title: L3 Network Name
+          type: string
+          description: Name of the L3 network to use
+          default: test
+          x-walrus-ui:
+            group: Basic
+            order: 6
+        instance_offering_name:
+          title: Instance Offering Name
+          type: string
+          description: Name of the instance offering to use
+          default: min
+          x-walrus-ui:
+            group: Basic
+            order: 7
+        zbx_user:
+          title: Zbx User
+          type: string
+          description: username for Zabbix Admin
+          default: Admin
+          x-walrus-ui:
+            group: Basic
+            order: 8
+        zbxpassword:
+          title: Zbxpassword
+          type: string
+          description: password for Zabbix Admin
+          default: zabbix
+          format: password
+          writeOnly: true
+          x-walrus-ui:
+            group: Basic
+            order: 9
+        port:
+          title: Port
+          type: number
+          description: The port on which the zabbix will listen
+          default: 80
+          x-walrus-ui:
+            group: Basic
+            order: 10
       x-walrus-ui:
         groupOrder:
         - Basic

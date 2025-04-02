@@ -32,11 +32,12 @@ output "walrus_resource_id" {
   description = "The id of resource where deployed in Walrus."
 }
 
-#
-# Submodule output
-#
+output "host" {
+  description = "Zabbix 实例 IP 地址"
+  value       = module.zabbix_instance.instance_ips[0]
+}
 
-output "submodule" {
-  value       = module.submodule.message
-  description = "The message from submodule."
+output "port" {
+  description = "Service Ports"
+  value       = 80
 }
