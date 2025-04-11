@@ -79,3 +79,8 @@ variable "port" {
   default     = 80
   description = "The port on which the zabbix will listen"
 }
+
+variable "expunge" {
+  type  = bool
+  default = true
+}

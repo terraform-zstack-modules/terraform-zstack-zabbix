@@ -41,3 +41,9 @@ output "port" {
   description = "Service Ports"
   value       = 80
 }
+
+output "endpoints" {
+  value = {
+    zabbix_ui    =  "http://${module.zabbix_instance.instance_ips[0]}"
+  }
+}
